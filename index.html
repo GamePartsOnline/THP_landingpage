@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Art du Code - Apprenez par la Pratique</title>
+    <!-- Bootswatch Theme (Flatly) - Application de l'Atomic Design via une surcouche -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/flatly/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Organisme : Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">⚓ L'Art du Code</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#solution">La Solution</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#temoignages">Avis</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="#cta" class="btn btn-warning fw-bold px-4 rounded-pill">Commencer</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Organisme : Hero Section (Marketing : Proposition de Valeur) -->
+    <header class="py-5 bg-light border-bottom">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold text-dark mb-3">Ne vous contentez pas de coder. <span class="text-primary">Bâtissez l'avenir.</span></h1>
+                    <p class="lead mb-4 text-muted">Apprenez le développement web par l'Atomic Design et le marketing. Créez des sites qui ne sont pas seulement beaux, mais qui <strong>fonctionnent</strong>.</p>
+                    <div class="d-grid gap-3 d-sm-flex">
+                        <a href="#cta" class="btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold">Rejoindre la cohorte</a>
+                        <a href="#solution" class="btn btn-outline-secondary btn-lg px-5 py-3 rounded-pill">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Coding" class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Organisme : Problème / Solution (Molécules de Features) -->
+    <section id="solution" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Pourquoi nous choisir ?</h2>
+                <p class="text-muted">Une méthode éprouvée pour passer de débutant à pro.</p>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="p-4 bg-white rounded shadow-sm h-100">
+                        <i class="fas fa-atom text-primary mb-3" style="font-size: 3rem;"></i>
+                        <h4>Atomic Design</h4>
+                        <p class="text-muted">Pensez composants, pas pages. Un code propre, réutilisable et professionnel dès le premier jour.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 bg-white rounded shadow-sm h-100">
+                        <i class="fas fa-bullseye text-primary mb-3" style="font-size: 3rem;"></i>
+                        <h4>Marketing Web</h4>
+                        <p class="text-muted">Apprenez à construire des interfaces qui convertissent. Le design au service de la stratégie.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 bg-white rounded shadow-sm h-100">
+                        <i class="fas fa-users text-primary mb-3" style="font-size: 3rem;"></i>
+                        <h4>Communauté</h4>
+                        <p class="text-muted">Apprenez avec les autres. Notre réseau de moussaillons est votre plus grande force.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organisme : Preuve Sociale (Témoignages) -->
+    <section id="temoignages" class="py-5 bg-primary text-white">
+        <div class="container py-5">
+            <h2 class="text-center mb-5 fw-bold">Ils ont sauté le pas</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="bg-white text-dark p-4 rounded shadow">
+                        <p class="fst-italic">"J'ai enfin compris comment structurer mes projets. L'Atomic Design a changé ma vie de dév !"</p>
+                        <footer class="blockquote-footer mt-2">Marc, <cite>Promo 2026</cite></footer>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bg-white text-dark p-4 rounded shadow">
+                        <p class="fst-italic">"Mes clients adorent mes nouveaux designs. C'est propre, cohérent et ça vend."</p>
+                        <footer class="blockquote-footer mt-2">Julie, <cite>Freelance</cite></footer>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bg-white text-dark p-4 rounded shadow">
+                        <p class="fst-italic">"La méthode THP est intense mais les résultats sont là. On apprend vraiment le métier."</p>
+                        <footer class="blockquote-footer mt-2">Kévin, <cite>Développeur Fullstack</cite></footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organisme : Appel à l'Action (CTA Final) -->
+    <section id="cta" class="py-5">
+        <div class="container py-5 text-center">
+            <h2 class="display-5 fw-bold mb-3">Prêt à devenir un expert ?</h2>
+            <p class="lead text-muted mb-4">Rejoignez la prochaine session et transformez votre carrière.</p>
+            <div class="max-width-500 mx-auto">
+                <form class="row g-2 justify-content-center">
+                    <div class="col-auto">
+                        <input type="email" class="form-control form-control-lg px-4 rounded-pill" placeholder="Votre email...">
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary btn-lg px-5 rounded-pill fw-bold shadow">S'inscrire</button>
+                    </div>
+                </form>
+            </div>
+            <p class="small text-muted mt-3">Rejoignez déjà +500 moussaillons formés.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark text-white text-center">
+        <div class="container py-4">
+            <p class="mb-0">© 2026 L'Art du Code. Bâti avec Bootstrap & Atomic Design.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
