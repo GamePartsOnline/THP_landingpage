@@ -3,135 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Art du Code - Apprenez par la Pratique</title>
-    <!-- Bootswatch Theme (Flatly) - Application de l'Atomic Design via une surcouche -->
-    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/flatly/bootstrap.min.css" rel="stylesheet">
+    <title>De l'Art Traditionnel au Numérique - La Transition Créative</title>
+    <!-- Bootswatch Theme (Journal) - Élégant et typographique pour un projet artistique -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        .hero-overlay {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1547891269-2152f923bb39?auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+            background-size: cover;
+            min-height: 80vh;
+        }
+        .card-img-hover {
+            transition: transform 0.3s ease;
+        }
+        .card-img-hover:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Organisme : Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+    <!-- Navbar (Organisme) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">⚓ L'Art du Code</a>
+            <a class="navbar-brand fw-bold text-primary" href="#">🎨 Art & Numérique</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#solution">La Solution</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#temoignages">Avis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#concept">Le Concept</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ateliers">Ateliers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galerie">Galerie</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a href="#cta" class="btn btn-warning fw-bold px-4 rounded-pill">Commencer</a>
+                        <a href="#cta" class="btn btn-primary rounded-pill px-4">Nous rejoindre</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Organisme : Hero Section (Marketing : Proposition de Valeur) -->
-    <header class="py-5 bg-light border-bottom">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="display-3 fw-bold text-dark mb-3">Ne vous contentez pas de coder. <span class="text-primary">Bâtissez l'avenir.</span></h1>
-                    <p class="lead mb-4 text-muted">Apprenez le développement web par l'Atomic Design et le marketing. Créez des sites qui ne sont pas seulement beaux, mais qui <strong>fonctionnent</strong>.</p>
-                    <div class="d-grid gap-3 d-sm-flex">
-                        <a href="#cta" class="btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold">Rejoindre la cohorte</a>
-                        <a href="#solution" class="btn btn-outline-secondary btn-lg px-5 py-3 rounded-pill">En savoir plus</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-none d-lg-block">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Coding" class="img-fluid rounded-3 shadow-lg">
-                </div>
+    <!-- Hero Section (Organisme - Marketing : Why/Proposition de Valeur) -->
+    <header class="hero-overlay d-flex align-items-center text-white">
+        <div class="container text-center">
+            <h1 class="display-2 fw-bold mb-3">De l'Art Traditionnel au Numérique</h1>
+            <p class="lead fs-3 mb-5">Sublimez vos techniques classiques grâce aux outils digitaux de demain.</p>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                <a href="#cta" class="btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold">Découvrir les formations</a>
+                <a href="#concept" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill">Notre philosophie</a>
             </div>
         </div>
     </header>
 
-    <!-- Organisme : Problème / Solution (Molécules de Features) -->
-    <section id="solution" class="py-5">
+    <!-- Concept Section (Organisme - Marketing : Problème/Solution) -->
+    <section id="concept" class="py-5 bg-light">
         <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Pourquoi nous choisir ?</h2>
-                <p class="text-muted">Une méthode éprouvée pour passer de débutant à pro.</p>
-            </div>
-            <div class="row g-4 text-center">
-                <div class="col-md-4">
-                    <div class="p-4 bg-white rounded shadow-sm h-100">
-                        <i class="fas fa-atom text-primary mb-3" style="font-size: 3rem;"></i>
-                        <h4>Atomic Design</h4>
-                        <p class="text-muted">Pensez composants, pas pages. Un code propre, réutilisable et professionnel dès le premier jour.</p>
-                    </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow" alt="Peinture traditionnelle">
                 </div>
-                <div class="col-md-4">
-                    <div class="p-4 bg-white rounded shadow-sm h-100">
-                        <i class="fas fa-bullseye text-primary mb-3" style="font-size: 3rem;"></i>
-                        <h4>Marketing Web</h4>
-                        <p class="text-muted">Apprenez à construire des interfaces qui convertissent. Le design au service de la stratégie.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 bg-white rounded shadow-sm h-100">
-                        <i class="fas fa-users text-primary mb-3" style="font-size: 3rem;"></i>
-                        <h4>Communauté</h4>
-                        <p class="text-muted">Apprenez avec les autres. Notre réseau de moussaillons est votre plus grande force.</p>
-                    </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <h2 class="display-5 fw-bold mb-4">La Renaissance Digitale</h2>
+                    <p class="lead text-muted">Pourquoi choisir entre le pinceau et le stylet ? Notre mission est de créer un pont entre l'authenticité de la matière et la puissance du pixel.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Numérisation haute fidélité de vos œuvres physiques.</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Maîtrise des outils de création 2D et 3D.</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Stratégies de diffusion sur les galeries numériques.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Organisme : Preuve Sociale (Témoignages) -->
-    <section id="temoignages" class="py-5 bg-primary text-white">
-        <div class="container py-5">
-            <h2 class="text-center mb-5 fw-bold">Ils ont sauté le pas</h2>
+    <!-- Ateliers (Organisme - Molécules de Cards) -->
+    <section id="ateliers" class="py-5">
+        <div class="container py-5 text-center">
+            <h2 class="fw-bold mb-5">Nos Ateliers Thématiques</h2>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="bg-white text-dark p-4 rounded shadow">
-                        <p class="fst-italic">"J'ai enfin compris comment structurer mes projets. L'Atomic Design a changé ma vie de dév !"</p>
-                        <footer class="blockquote-footer mt-2">Marc, <cite>Promo 2026</cite></footer>
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=600&q=40" class="card-img-top card-img-hover" alt="Atelier Peinture">
+                        <div class="card-body">
+                            <h4 class="card-title">Peinture Hybride</h4>
+                            <p class="card-text text-muted">Apprenez à retoucher vos toiles à l'huile avec Photoshop sans perdre le grain naturel.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="bg-white text-dark p-4 rounded shadow">
-                        <p class="fst-italic">"Mes clients adorent mes nouveaux designs. C'est propre, cohérent et ça vend."</p>
-                        <footer class="blockquote-footer mt-2">Julie, <cite>Freelance</cite></footer>
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=40" class="card-img-top card-img-hover" alt="Illustration">
+                        <div class="card-body">
+                            <h4 class="card-title">Illustration Digitale</h4>
+                            <p class="card-text text-muted">Passez du croquis papier à l'illustration vectorielle professionnelle.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="bg-white text-dark p-4 rounded shadow">
-                        <p class="fst-italic">"La méthode THP est intense mais les résultats sont là. On apprend vraiment le métier."</p>
-                        <footer class="blockquote-footer mt-2">Kévin, <cite>Développeur Fullstack</cite></footer>
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=40" class="card-img-top card-img-hover" alt="NFT Art">
+                        <div class="card-body">
+                            <h4 class="card-title">Art & Blockchain</h4>
+                            <p class="card-text text-muted">Comprendre et intégrer le monde des NFT pour protéger et vendre vos créations.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Organisme : Appel à l'Action (CTA Final) -->
-    <section id="cta" class="py-5">
+    <!-- Témoignages (Preuve Sociale) -->
+    <section class="py-5 bg-primary text-white">
         <div class="container py-5 text-center">
-            <h2 class="display-5 fw-bold mb-3">Prêt à devenir un expert ?</h2>
-            <p class="lead text-muted mb-4">Rejoignez la prochaine session et transformez votre carrière.</p>
-            <div class="max-width-500 mx-auto">
-                <form class="row g-2 justify-content-center">
-                    <div class="col-auto">
-                        <input type="email" class="form-control form-control-lg px-4 rounded-pill" placeholder="Votre email...">
+            <h2 class="fw-bold mb-5">Ils ont évolué avec nous</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="bg-white text-dark p-4 rounded shadow-lg">
+                        <p class="fs-5 italic">"J'avais peur de perdre mon âme d'artiste en passant au numérique. Ici, j'ai appris que c'est juste un nouveau pinceau."</p>
+                        <h5 class="mt-3 mb-0">Éléonore R.</h5>
+                        <small class="text-muted">Artiste Peintre Traditionnelle</small>
                     </div>
-                    <div class="col-auto">
-                        <button type="submit" class="btn btn-primary btn-lg px-5 rounded-pill fw-bold shadow">S'inscrire</button>
+                </div>
+                <div class="col-md-6">
+                    <div class="bg-white text-dark p-4 rounded shadow-lg">
+                        <p class="fs-5">"Une formation complète qui m'a permis d'exposer mes œuvres dans des galeries virtuelles à l'international."</p>
+                        <h5 class="mt-3 mb-0">Julien M.</h5>
+                        <small class="text-muted">Illustrateur Freelance</small>
                     </div>
-                </form>
+                </div>
             </div>
-            <p class="small text-muted mt-3">Rejoignez déjà +500 moussaillons formés.</p>
+        </div>
+    </section>
+
+    <!-- CTA Final (Marketing - Conversion) -->
+    <section id="cta" class="py-5 text-center">
+        <div class="container py-5">
+            <h2 class="display-4 fw-bold mb-4">Prêt à entamer votre mutation ?</h2>
+            <p class="lead mb-5 text-muted">Inscrivez-vous à notre newsletter pour recevoir une initiation gratuite à l'art numérique.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form class="input-group input-group-lg shadow-sm rounded-pill overflow-hidden">
+                        <input type="email" class="form-control border-0 px-4" placeholder="votre-email@exemple.com">
+                        <button class="btn btn-primary px-4 fw-bold" type="submit">S'inscrire</button>
+                    </form>
+                    <p class="mt-3 small text-muted">Déjà 1 200 artistes nous font confiance.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="py-5 bg-dark text-white text-center">
-        <div class="container py-4">
-            <p class="mb-0">© 2026 L'Art du Code. Bâti avec Bootstrap & Atomic Design.</p>
+        <div class="container">
+            <div class="mb-4">
+                <a href="#" class="text-white me-3 fs-4"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white me-3 fs-4"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white fs-4"><i class="fab fa-behance"></i></a>
+            </div>
+            <p class="mb-0 text-muted">© 2026 De l'Art Traditionnel au Numérique. Tous droits réservés.</p>
+            <p class="small text-muted mt-2">Réalisé avec ❤️ par un moussaillon THP</p>
         </div>
     </footer>
 
