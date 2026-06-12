@@ -3,329 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art & Numérique - L'Expérience Ultime</title>
-    <!-- Bootswatch Theme (Journal) -->
+    <title>De l'Art Traditionnel au Numérique</title>
     <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root { --primary-color: #eb6864; }
-        
-        /* 2. Hero avec Parallaxe/Vidéo Overlay */
-        .hero-section {
-            position: relative;
-            height: 90vh;
-            overflow: hidden;
-            background: #000;
-        }
-        .hero-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            opacity: 0.5;
-            filter: grayscale(50%);
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            height: 100%;
-        }
-
-        /* 4. Portfolio Interactif */
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-        }
-        .portfolio-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(235, 104, 100, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: 0.4s;
-            color: white;
-        }
+        .hero-section { position: relative; height: 80vh; overflow: hidden; background: #000 url('https://images.unsplash.com/photo-1547891269-2152f923bb39?auto=format&fit=crop&w=1920&q=80') no-repeat center center; background-size: cover; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
+        .hero-content { position: relative; z-index: 2; height: 100%; display: flex; align-items: center; justify-content: center; }
+        .portfolio-item { position: relative; overflow: hidden; border-radius: 15px; height: 350px; }
+        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; }
+        .portfolio-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(235, 104, 100, 0.9); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.4s; color: white; text-align: center; }
         .portfolio-item:hover .portfolio-overlay { opacity: 1; }
-
-        /* 6. Bouton Flottant */
-        .floating-contact {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-            width: 60px;
-            height: 60px;
-            background: #25d366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: 0.3s;
-            text-decoration: none;
-        }
-        .floating-contact:hover { transform: scale(1.1); color: white; }
-
-        /* Stats */
-        .stat-card i { font-size: 2.5rem; color: var(--primary-color); }
-
-        .team-img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+        .floating-contact { position: fixed; bottom: 30px; right: 30px; z-index: 1000; width: 60px; height: 60px; background: #eb6864; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .team-img { width: 150px; height: 150px; object-fit: cover; border: 5px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold text-primary" href="#">🎨 Art & Numérique</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#concept">Concept</a></li>
                     <li class="nav-item"><a class="nav-link" href="#galerie">Galerie</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#tarifs">Tarifs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#equipe">Équipe</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <a href="#cta" class="btn btn-primary rounded-pill px-4">Nous rejoindre</a>
-                    </li>
+                    <li class="nav-item ms-lg-3"><a href="#cta" class="btn btn-primary rounded-pill px-4">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- 2. Hero Section avec Vidéo Background (Placeholder Unsplash) -->
-    <header class="hero-section">
-        <img src="https://images.unsplash.com/photo-1547891269-2152f923bb39?auto=format&fit=crop&w=1920&q=80" class="hero-video" alt="Art Video Placeholder">
-        <div class="hero-content container d-flex align-items-center justify-content-center text-center text-white">
+    <header class="hero-section text-white text-center">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
             <div data-aos="fade-up">
-                <h1 class="display-1 fw-bold mb-3">L'Art sans Limites</h1>
-                <p class="lead fs-2 mb-5">Fusionnez le pinceau et le pixel pour créer l'exceptionnel.</p>
-                <a href="#cta" class="btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg">Entrer dans la Renaissance</a>
+                <h1 class="display-3 fw-bold mb-3">L'Art de Demain</h1>
+                <p class="lead fs-3 mb-5">La fusion du pinceau et du numérique.</p>
+                <a href="#cta" class="btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold">Découvrir</a>
             </div>
         </div>
     </header>
 
-    <!-- 5. Section Statistiques -->
-    <section class="py-5 bg-white border-bottom">
-        <div class="container py-4">
-            <div class="row g-4 text-center">
-                <div class="col-6 col-md-3" data-aos="zoom-in">
-                    <div class="stat-card">
-                        <i class="fas fa-users mb-2"></i>
-                        <h2 class="fw-bold mb-0">1200+</h2>
-                        <p class="text-muted">Artistes formés</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="stat-card">
-                        <i class="fas fa-palette mb-2"></i>
-                        <h2 class="fw-bold mb-0">45</h2>
-                        <p class="text-muted">Expositions virtuelles</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="stat-card">
-                        <i class="fas fa-globe-europe mb-2"></i>
-                        <h2 class="fw-bold mb-0">12</h2>
-                        <p class="text-muted">Pays représentés</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="stat-card">
-                        <i class="fas fa-star mb-2"></i>
-                        <h2 class="fw-bold mb-0">98%</h2>
-                        <p class="text-muted">Satisfaction</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Portfolio Interactif (Galerie) -->
     <section id="galerie" class="py-5 bg-light">
         <div class="container py-5">
-            <h2 class="text-center mb-5 fw-bold" data-aos="fade-right">Galerie de Mutation</h2>
+            <h2 class="text-center mb-5 fw-bold">Notre Galerie</h2>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4" data-aos="fade-up">
-                    <div class="portfolio-item shadow">
-                        <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&w=600&q=40" class="img-fluid" alt="Traditional to Digital">
-                        <div class="portfolio-overlay">
-                            <div class="text-center">
-                                <h5>L'Éveil Numérique</h5>
-                                <p class="small">Huile sur toile & Retouche Digitale</p>
-                                <button class="btn btn-outline-light btn-sm">Voir l'avant/après</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="portfolio-item shadow">
-                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=600&q=40" class="img-fluid" alt="Traditional to Digital">
-                        <div class="portfolio-overlay text-center p-3">
-                            <h5>Vecteur Organique</h5>
-                            <p class="small">Encre & Illustration Vectorielle</p>
-                            <button class="btn btn-outline-light btn-sm">Voir l'avant/après</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="portfolio-item shadow">
-                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=40" class="img-fluid" alt="Traditional to Digital">
-                        <div class="portfolio-overlay text-center p-3">
-                            <h5>NFT Genesis</h5>
-                            <p class="small">Peinture Acrylique & Animation 3D</p>
-                            <button class="btn btn-outline-light btn-sm">Voir l'avant/après</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. Section Tarification (Pricing) -->
-    <section id="tarifs" class="py-5 bg-white">
-        <div class="container py-5 text-center">
-            <h2 class="fw-bold mb-5" data-aos="fade-up">Choisissez votre Mutation</h2>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-4" data-aos="flip-left">
-                    <div class="card h-100 shadow-sm border-0 bg-light p-4">
-                        <h4 class="fw-bold">Initiation</h4>
-                        <h2 class="text-primary mb-4">Gratuit</h2>
-                        <ul class="list-unstyled mb-5">
-                            <li><i class="fas fa-check text-success me-2"></i> Accès à la Galerie</li>
-                            <li><i class="fas fa-check text-success me-2"></i> 1 Atelier Découverte</li>
-                            <li><i class="fas fa-check text-success me-2"></i> Newsletter Hebdo</li>
-                        </ul>
-                        <button class="btn btn-outline-primary rounded-pill mt-auto">Commencer</button>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
-                    <div class="card h-100 shadow border-primary p-4" style="transform: scale(1.05);">
-                        <div class="badge bg-primary rounded-pill mb-2 mx-auto" style="width: fit-content;">Plus Populaire</div>
-                        <h4 class="fw-bold">Artiste</h4>
-                        <h2 class="text-primary mb-4">49€<small class="text-muted fs-6">/mois</small></h2>
-                        <ul class="list-unstyled mb-5 text-start">
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Ateliers Illimités</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Coaching Mensuel</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Galerie Perso VIP</li>
-                        </ul>
-                        <button class="btn btn-primary rounded-pill mt-auto shadow">Devenir Artiste</button>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
-                    <div class="card h-100 shadow-sm border-0 bg-light p-4">
-                        <h4 class="fw-bold">Maître</h4>
-                        <h2 class="text-primary mb-4">99€<small class="text-muted fs-6">/mois</small></h2>
-                        <ul class="list-unstyled mb-5">
-                            <li><i class="fas fa-check text-success me-2"></i> Tout le pack Artiste</li>
-                            <li><i class="fas fa-check text-success me-2"></i> Support NFT & Blockchain</li>
-                            <li><i class="fas fa-check text-success me-2"></i> Mentorat Privé 1:1</li>
-                        </ul>
-                        <button class="btn btn-outline-primary rounded-pill mt-auto">Accès Maître</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 1. Section Équipe -->
-    <section id="equipe" class="py-5 bg-light">
-        <div class="container py-5 text-center">
-            <h2 class="fw-bold mb-5" data-aos="fade-down">Les Maîtres de la Transition</h2>
-            <div class="row g-5">
                 <div class="col-md-4" data-aos="fade-up">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" class="team-img rounded-circle mb-3" alt="Sophie">
-                    <h5 class="fw-bold mb-0">Sophie Duchamp</h5>
-                    <p class="text-primary small">Curatrice Art Traditionnel</p>
-                    <p class="text-muted small px-3">Peintre à l'huile depuis 15 ans, Sophie veille à l'authenticité de chaque œuvre numérisée.</p>
-                    <div class="d-flex justify-content-center gap-2">
-                        <a href="#" class="text-muted"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-muted"><i class="fab fa-behance"></i></a>
+                    <div class="portfolio-item shadow">
+                        <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&w=600&q=80" alt="Art 1">
+                        <div class="portfolio-overlay"><h5>Mutation Digitale</h5></div>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" class="team-img rounded-circle mb-3" alt="Marc">
-                    <h5 class="fw-bold mb-0">Marc Vecto</h5>
-                    <p class="text-primary small">Maître Digital & 3D</p>
-                    <p class="text-muted small px-3">Expert en rendu hyper-réaliste, Marc repousse les limites techniques de la création numérique.</p>
-                    <div class="d-flex justify-content-center gap-2">
-                        <a href="#" class="text-muted"><i class="fab fa-github"></i></a>
-                        <a href="#" class="text-muted"><i class="fab fa-twitter"></i></a>
+                    <div class="portfolio-item shadow">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=600&q=80" alt="Art 2">
+                        <div class="portfolio-overlay"><h5>Vecteur Organique</h5></div>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" class="team-img rounded-circle mb-3" alt="Kevin">
-                    <h5 class="fw-bold mb-0">Kevin Block</h5>
-                    <p class="text-primary small">Stratège Web3 & NFT</p>
-                    <p class="text-muted small px-3">Passionné par le marché de l'art, Kevin guide les artistes vers leur indépendance financière numérique.</p>
-                    <div class="d-flex justify-content-center gap-2">
-                        <a href="#" class="text-muted"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-muted"><i class="fas fa-globe"></i></a>
+                    <div class="portfolio-item shadow">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" alt="Art 3">
+                        <div class="portfolio-overlay"><h5>Art Blockchain</h5></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Final -->
-    <section id="cta" class="py-5 bg-primary text-white text-center overflow-hidden">
-        <div class="container py-5" data-aos="zoom-in">
-            <h2 class="display-4 fw-bold mb-4">Écrivez votre Propre Renaissance</h2>
-            <p class="lead mb-5">Inscrivez-vous aujourd'hui pour votre session gratuite de digitalisation.</p>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <form class="input-group input-group-lg shadow rounded-pill overflow-hidden border-0">
-                        <input type="email" class="form-control border-0 px-4" placeholder="Votre email artistique...">
-                        <button class="btn btn-dark px-4 fw-bold" type="submit">C'est parti !</button>
-                    </form>
-                </div>
-            </div>
+    <section id="cta" class="py-5 text-center">
+        <div class="container py-5">
+            <h2 class="display-4 fw-bold mb-4">Envie d'en savoir plus ?</h2>
+            <p class="lead mb-5">Rejoignez notre communauté de passionnés.</p>
+            <a href="mailto:contact@exemple.com" class="btn btn-primary btn-lg px-5 rounded-pill fw-bold shadow">Nous contacter</a>
         </div>
     </section>
 
-    <!-- 6. Bouton Flottant WhatsApp -->
-    <a href="https://wa.me/33600000000" class="floating-contact shadow-lg" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Footer -->
     <footer class="py-5 bg-dark text-white text-center">
-        <div class="container">
-            <p class="mb-0 text-muted small">© 2026 De l'Art Traditionnel au Numérique. Tous droits réservés.</p>
-            <p class="small text-muted mt-2">Design par un Moussaillon Expert THP</p>
-        </div>
+        <p class="mb-0 small text-muted">© 2026 Portfolio Art & Numérique. Tous droits réservés.</p>
     </footer>
 
-    <!-- Bootstrap & Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialisation des animations AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            easing: 'ease-in-out'
-        });
-    </script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
